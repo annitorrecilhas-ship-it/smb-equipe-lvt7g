@@ -1,0 +1,101 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>SMB · Equipe</title><link rel="stylesheet" href="https://annitorrecilhas-ship-it.github.io/dash-smb/app.css?v=e67267ef76"></head><body>
+<header class="report-header">
+<div class="deco-ring"></div>
+<div class="header-top">
+<div>
+<p class="eyebrow">Ongoing SMB · Customer Experience</p>
+<h1>Painel da equipe Ongoing SMB (KPIs)</h1>
+<div class="update-badge"><span class="dot-live"></span>Última atualização: <strong>02/10/2026 às 12h05</strong><span class="sep"> · </span>Próxima atualização: <strong>05/10/2026 às 09h00</strong></div>
+</div>
+<span id="logo-slot"></span>
+</div>
+</header>
+<main>
+<section class="block highlight">
+<div class="block-title">
+<span class="dot"></span>Veículos agendados x meta — equipe<span class="tag">Meta semanal: <span id="lbl-meta-equipe"></span></span>
+<div class="view-toggle" id="eq-meta-toggle">
+<button type="button" class="active" data-view="semanal">Semanal</button>
+<button type="button" data-view="mensal">Mensal</button>
+</div>
+</div>
+<div class="dash-card">
+<div class="dash-legend" id="leg-eq-meta"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-meta"></canvas></div>
+</div>
+</section>
+<section class="block">
+<div class="block-title">
+<span class="dot"></span>Por pessoa — veículos agendados x meta<span class="tag pend" id="lbl-pessoa-periodo"></span>
+<div class="view-toggle" id="eq-pessoa-toggle">
+<button type="button" class="active" data-view="semana">Última semana</button>
+<button type="button" data-view="mes">Mês atual</button>
+</div>
+</div>
+<div class="dash-card">
+<div class="dash-legend" id="leg-eq-pessoa"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-pessoa"></canvas></div>
+</div>
+<div class="dash-card" style="border-top: 1px solid var(--border);">
+<div class="block-note" style="padding:0;" id="note-eq-pessoa"></div>
+</div>
+</section>
+<section class="block">
+<div class="block-title">
+<span class="dot"></span>Por pessoa — tickets e dias para agendar
+<div class="view-toggle" id="eq-evol-toggle">
+<button type="button" class="active" data-view="mensal">Mensal</button>
+<button type="button" data-view="semanal">Semanal</button>
+</div>
+</div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">Tickets agendados</div>
+<div class="dash-legend" id="leg-eq-tickets"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-tickets"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">Dias para agendar</div>
+<div class="dash-legend" id="leg-eq-dias"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-dias"></canvas></div>
+</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title"><span class="dot"></span>Tickets pendentes de agendamento (ao vivo)<span class="tag pend">Proprietário do ticket</span></div>
+<div class="dash-card"><div class="stat-row" id="eq-backlog"></div></div>
+</section>
+<section class="block">
+<div class="block-title"><span class="dot"></span><span>SLA Agendamento — prestador (<span id="lbl-prest-nome"></span>)</span></div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">% dentro do prazo — mensal</div>
+<div class="dash-canvas-wrap"><canvas id="c-eq-sla-m"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">% dentro do prazo — últimas 3 semanas</div>
+<div class="dash-canvas-wrap"><canvas id="c-eq-sla-s"></canvas></div>
+</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title"><span class="dot"></span>Visão geral da operação<span class="tag pend">Não é sua diretamente, mas dá contexto</span></div>
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">Agendamento — equipe SMB (tickets, potencial e dias médios)</div>
+<div class="dash-legend" id="leg-agend-geral"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-agend-geral"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">SLA Agendamento — Recebido x Realizado (etapa toda)</div>
+<div class="dash-legend" id="leg-recrel"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-recrel"></canvas></div>
+</div>
+</div>
+</section>
+</main>
+
+<script>/*__DATA_BEGIN__*/var D={"role":"equipe","name":"Equipe Ongoing SMB","first":"time","labelsM":["Jul/26","Ago/26","Set/26","Out/26*"],"labelsS":["S-3","S-2","S-1"],"weekRanges":["S-3 07/09–13/09","S-2 14/09–20/09","S-1 21/09–27/09"],"team":{"ticketsM":[340,408,478,21],"ticketsS":[80,109,119],"potM":[648,673,794,31],"potS":[111,191,168],"realM":[313,374,448,21],"recM":[516,512,506,39],"diasM":[11.4,13.5,13,12.9],"diasS":[18.1,11.2,10.3]},"eq":{"metaSemanalEquipe":216,"metaS":[216,216,216],"metaM":[994,907,950,86],"corte":"02/10","pessoas":[{"first":"Beatriz","metaSemanal":60,"potM":[290,258,276,7],"potS":[58,50,53],"metaM":[276,252,264,24],"metaS":[60,60,60],"ticketsM":[143,132,158,4],"ticketsS":[32,34,39],"diasM":[11.8,16.6,13.7,1.9],"diasS":[21.1,11.7,11.7],"backlog":204},{"first":"Franklin","metaSemanal":36,"potM":[0,0,0,0],"potS":[0,0,0],"metaM":[166,151,158,14],"metaS":[36,36,36],"ticketsM":[0,0,0,0],"ticketsS":[0,0,0],"diasM":[null,null,null,null],"diasS":[null,null,null],"backlog":0},{"first":"Luana","metaSemanal":60,"potM":[278,256,260,15],"potS":[24,65,76],"metaM":[276,252,264,24],"metaS":[60,60,60],"ticketsM":[144,153,175,10],"ticketsS":[22,41,50],"diasM":[12.1,13.7,12.6,21.9],"diasS":[23.6,12.8,8.9],"backlog":188},{"first":"Thyfany","metaSemanal":60,"potM":[80,159,258,9],"potS":[29,76,39],"metaM":[276,252,264,24],"metaS":[60,60,60],"ticketsM":[53,123,145,7],"ticketsS":[26,34,30],"diasM":[8.4,10,12.8,6.4],"diasS":[9.3,8.7,10.7],"backlog":153}]},"prest":{"first":"Maynara","slaM":[null,91.8,93.5,97.6],"slaS":[94.6,96.2,91.2],"volM":[7,538,619,21],"volD":{"labels":["11/09","14/09","15/09","16/09","17/09","18/09","21/09","22/09","23/09","24/09","25/09","28/09","29/09","30/09","01/10"],"values":[21,30,22,31,32,23,27,34,31,43,22,33,35,36,21]},"note":"<strong>Como ler:</strong> % dentro do prazo = linhas \"DENTRO DO SLA\" ÷ total, pela data agendada. Volume = tickets distintos pela data em que entraram na sua etapa. Seu SLA começa em Ago/26, quando a etapa passou a ter volume no seu nome — Jul/26 aparece sem dados de SLA, não como 0%."}};/*__DATA_END__*/</script>
+<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/base.js?v=85bf9cfb10"></script>
+<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/paineis.js?v=3d4fb5cd9a"></script>
+</body></html>
