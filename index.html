@@ -17,6 +17,7 @@
 <div class="view-toggle" id="eq-meta-toggle">
 <button type="button" class="active" data-view="semanal">Semanal</button>
 <button type="button" data-view="mensal">Mensal</button>
+<button type="button" data-view="diario">Diário</button>
 </div>
 </div>
 <div class="dash-card">
@@ -30,6 +31,7 @@
 <div class="view-toggle" id="eq-pessoa-toggle">
 <button type="button" class="active" data-view="semana">Última semana</button>
 <button type="button" data-view="mes">Mês atual</button>
+<button type="button" data-view="dia">Último dia útil</button>
 </div>
 </div>
 <div class="dash-card">
@@ -46,6 +48,7 @@
 <div class="view-toggle" id="eq-evol-toggle">
 <button type="button" class="active" data-view="mensal">Mensal</button>
 <button type="button" data-view="semanal">Semanal</button>
+<button type="button" data-view="diario">Diário</button>
 </div>
 </div>
 <div class="split-2">
@@ -58,6 +61,45 @@
 <div class="dash-card-title">Dias para agendar</div>
 <div class="dash-legend" id="leg-eq-dias"></div>
 <div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-dias"></canvas></div>
+</div>
+</div>
+</section>
+<section class="block">
+<div class="block-title">
+<span class="dot"></span>Atendimento — por pessoa<span class="tag">Intercom · chat/WhatsApp</span>
+<div class="view-toggle" id="atend-toggle">
+<button type="button" class="active" data-view="mensal">Mensal</button>
+<button type="button" data-view="semanal">Semanal</button>
+<button type="button" data-view="diario">Diário</button>
+</div>
+</div>
+<div id="atend-wrap">
+<div class="split-2">
+<div class="dash-card">
+<div class="dash-card-title">CSAT</div>
+<div class="dash-legend" id="leg-eq-atend-csat"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-atend-csat"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">Conversas fechadas</div>
+<div class="dash-legend" id="leg-eq-atend-conv"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-atend-conv"></canvas></div>
+</div>
+</div>
+<div class="split-2" style="border-top: 1px solid var(--border);">
+<div class="dash-card">
+<div class="dash-card-title">TME — tempo da 1ª resposta (mediana)</div>
+<div class="dash-legend" id="leg-eq-atend-tme"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-atend-tme"></canvas></div>
+</div>
+<div class="dash-card">
+<div class="dash-card-title">TMA — tempo até o 1º fechamento (mediana)</div>
+<div class="dash-legend" id="leg-eq-atend-tma"></div>
+<div class="dash-canvas-wrap dash-canvas-tall"><canvas id="c-eq-atend-tma"></canvas></div>
+</div>
+</div>
+<div class="dash-card" style="border-top: 1px solid var(--border);">
+<div class="block-note" style="padding:0;" id="note-eq-atend"></div>
 </div>
 </div>
 </section>
@@ -95,7 +137,7 @@
 </section>
 </main>
 
-<script>/*__DATA_BEGIN__*/var D={"role":"equipe","name":"Equipe Ongoing SMB","first":"time","labelsM":["Jul/26","Ago/26","Set/26","Out/26*"],"labelsS":["S-3","S-2","S-1"],"labelsDias":["28/09","29/09","30/09","01/10","02/10","05/10","06/10","07/10","08/10","09/10"],"weekRanges":["S-3 21/09–27/09","S-2 28/09–04/10","S-1 05/10–11/10"],"team":{"ticketsM":[340,408,478,150],"ticketsS":[119,124,108],"ticketsD":[29,27,32,18,18,22,29,23,22,12],"potM":[648,673,794,206],"potS":[168,242,151],"potD":[69,31,97,28,17,28,51,30,27,15],"realM":[313,374,448,142],"recM":[515,512,506,196],"diasM":[11.4,13.5,13,9.1],"diasS":[10.3,12.5,8.8],"diasD":[11.9,17.7,11.8,13.4,6.2,3,11.1,4.4,18,5.7]},"eq":{"metaSemanalEquipe":400,"metaS":[400,400,400],"metaM":[1840,1680,1760,720],"corte":"13/10","pessoas":[{"first":"Beatriz","metaSemanal":80,"potM":[290,258,276,63],"potS":[53,88,51],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[143,132,158,37],"ticketsS":[39,39,28],"diasM":[11.8,16.6,13.7,11.8],"diasS":[11.7,12.6,14.1],"backlog":205},{"first":"Franklin","metaSemanal":80,"potM":[0,0,0,14],"potS":[0,1,13],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[0,0,0,14],"ticketsS":[0,1,13],"diasM":[null,null,null,0.7],"diasS":[null,0,0.8],"backlog":73},{"first":"Luana","metaSemanal":80,"potM":[278,256,260,86],"potS":[76,65,58],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[144,153,175,64],"ticketsS":[50,48,44],"diasM":[12.1,13.7,12.6,10.9],"diasS":[8.9,14.7,8.7],"backlog":197},{"first":"Thyfany","metaSemanal":80,"potM":[80,159,258,43],"potS":[39,88,29],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[53,123,145,35],"ticketsS":[30,36,23],"diasM":[8.4,10,12.8,6.4],"diasS":[10.7,9.9,7.1],"backlog":158},{"first":"Luana Alves","metaSemanal":80,"potM":[0,0,0,0],"potS":[0,0,0],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[0,0,0,0],"ticketsS":[0,0,0],"diasM":[null,null,null,null],"diasS":[null,null,null],"backlog":0}]},"prest":{"first":"Maynara","slaM":[null,91.8,93.3,79.7],"slaS":[91.2,93.8,76.2],"volM":[7,539,618,177],"volD":{"labels":["21/09","22/09","23/09","24/09","25/09","28/09","29/09","30/09","01/10","02/10","05/10","06/10","07/10","08/10","09/10"],"values":[27,34,31,43,22,32,35,36,21,24,26,36,26,28,16]},"note":"<strong>Como ler:</strong> % dentro do prazo = linhas \"DENTRO DO SLA\" ÷ total, pela data agendada. Volume = tickets distintos pela data em que entraram na sua etapa. Seu SLA começa em Ago/26, quando a etapa passou a ter volume no seu nome — Jul/26 aparece sem dados de SLA, não como 0%."}};/*__DATA_END__*/</script>
+<script>/*__DATA_BEGIN__*/var D={"role":"equipe","name":"Equipe Ongoing SMB","first":"time","labelsM":["Jul/26","Ago/26","Set/26","Out/26*"],"labelsS":["S-3","S-2","S-1"],"labelsDias":["28/09","29/09","30/09","01/10","02/10","05/10","06/10","07/10","08/10","09/10"],"weekRanges":["S-3 21/09–27/09","S-2 28/09–04/10","S-1 05/10–11/10"],"team":{"ticketsM":[340,408,478,150],"ticketsS":[119,124,108],"ticketsD":[29,27,32,18,18,22,29,23,22,12],"potM":[648,673,794,206],"potS":[168,242,151],"potD":[69,31,97,28,17,28,51,30,27,15],"realM":[313,374,448,142],"recM":[515,512,506,196],"diasM":[11.4,13.5,13,9.1],"diasS":[10.3,12.5,8.8],"diasD":[11.9,17.7,11.8,13.4,6.2,3,11.1,4.4,18,5.7]},"eq":{"metaSemanalEquipe":400,"metaS":[400,400,400],"metaM":[1840,1680,1760,720],"metaD":[80,80,80,80,80,80,80,80,80,80],"corte":"13/10","pessoas":[{"first":"Beatriz","metaSemanal":80,"potM":[290,258,276,63],"potS":[53,88,51],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[143,132,158,37],"ticketsS":[39,39,28],"diasM":[11.8,16.6,13.7,11.8],"diasS":[11.7,12.6,14.1],"potD":[33,12,32,6,5,8,20,7,14,2],"metaD":[16,16,16,16,16,16,16,16,16,16],"ticketsD":[11,8,12,3,5,5,7,5,9,2],"diasD":[7.9,12.5,22.2,2.5,5.6,3.4,19.1,6.1,23.7,0.4],"backlog":205},{"first":"Franklin","metaSemanal":80,"potM":[0,0,0,14],"potS":[0,1,13],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[0,0,0,14],"ticketsS":[0,1,13],"diasM":[null,null,null,0.7],"diasS":[null,0,0.8],"potD":[0,0,0,0,1,3,8,1,1,0],"metaD":[16,16,16,16,16,16,16,16,16,16],"ticketsD":[0,0,0,0,1,3,6,2,1,1],"diasD":[null,null,null,null,0,0,1.3,0,0,2.1],"backlog":73},{"first":"Luana","metaSemanal":80,"potM":[278,256,260,86],"potS":[76,65,58],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[144,153,175,64],"ticketsS":[50,48,44],"diasM":[12.1,13.7,12.6,10.9],"diasS":[8.9,14.7,8.7],"potD":[18,11,14,15,7,10,14,13,10,11],"metaD":[16,16,16,16,16,16,16,16,16,16],"ticketsD":[12,11,8,10,7,8,8,11,10,7],"diasD":[14,21.7,3.4,21.9,7.6,3.5,13,3.2,18.2,5],"backlog":197},{"first":"Thyfany","metaSemanal":80,"potM":[80,159,258,43],"potS":[39,88,29],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[53,123,145,35],"ticketsS":[30,36,23],"diasM":[8.4,10,12.8,6.4],"diasS":[10.7,9.9,7.1],"potD":[18,8,51,7,4,7,9,9,2,2],"metaD":[16,16,16,16,16,16,16,16,16,16],"ticketsD":[6,8,12,5,5,6,8,5,2,2],"diasD":[14.8,17.4,6.9,2.9,6.1,3.5,9.6,7.1,0,15.4],"backlog":158},{"first":"Luana Alves","metaSemanal":80,"potM":[0,0,0,0],"potS":[0,0,0],"metaM":[368,336,352,144],"metaS":[80,80,80],"ticketsM":[0,0,0,0],"ticketsS":[0,0,0],"diasM":[null,null,null,null],"diasS":[null,null,null],"potD":[0,0,0,0,0,0,0,0,0,0],"metaD":[16,16,16,16,16,16,16,16,16,16],"ticketsD":[0,0,0,0,0,0,0,0,0,0],"diasD":[null,null,null,null,null,null,null,null,null,null],"backlog":0}]},"atend":{"team":{"convM":[1270,1257,1208,361],"nCsatM":[355,325,346,101],"csatM":[92.7,94.8,95.4,95],"tmeM":[17.45,3.4833,6.1167,5.5833],"tmaM":[5.22333,1.94889,1.72861,1.61417],"convS":[287,261,268],"nCsatS":[98,64,72],"csatS":[93.9,95.3,93.1],"tmeS":[9.1167,5.9,6.1667],"tmaS":[1.96472,2.01139,1.75778],"convD":[71,59,40,53,36,66,63,55,39,39],"nCsatD":[17,8,10,16,13,14,23,12,9,14],"csatD":[94.1,87.5,90,100,100,92.9,87,91.7,100,100],"tmeD":[10.1,6.2,4.8333,3.1,3.0833,2.8,7.3333,10.8,9.0667,4.7667],"tmaD":[2.39722,2.03528,1.86,3.32972,0.83722,1.52722,1.75194,1.82389,2.64556,1.51861]},"labelsD":["28/09","29/09","30/09","01/10","02/10","05/10","06/10","07/10","08/10","09/10"],"pessoas":[{"first":"Beatriz","nome":"Beatriz Queiroz","s":{"convM":[264,239,347,80],"nCsatM":[64,71,108,34],"csatM":[92.2,98.6,98.1,97.1],"tmeM":[2.3167,2.4167,1.9333,2.3667],"tmaM":[5.08222,1.92806,1.51611,1.25944],"convS":[96,85,50],"nCsatS":[44,27,21],"csatS":[95.5,100,95.2],"tmeS":[1.6167,2.75,2.1],"tmaS":[1.38556,1.46083,1.29833],"convD":[22,17,17,15,15,18,10,8,5,9],"nCsatD":[9,2,3,7,6,4,8,5,2,2],"csatD":[100,100,100,100,100,100,87.5,100,100,100],"tmeD":[2.3833,2.85,3.0167,2.7,2.8333,2.3833,1.9,1.95,2.4667,1],"tmaD":[2.64167,1.32778,4.08806,0.32722,0.78722,0.79,1.1925,1.94194,6.52444,5.74583]}},{"first":"Franklin","nome":"Franklin Bandeira","s":{"convM":[null,null,64,51],"nCsatM":[null,null,28,30],"csatM":[null,null,82.1,96.7],"tmeM":[null,null,2.8,2.3167],"tmaM":[null,null,1.85111,1.04333],"convS":[34,30,44],"nCsatS":[20,13,25],"csatS":[90,76.9,96],"tmeS":[2.8667,4.4167,2.3333],"tmaS":[1.94083,1.745,0.92528],"convD":[6,5,11,6,2,9,12,11,5,9],"nCsatD":[2,2,4,4,1,4,8,6,3,4],"csatD":[50,50,75,100,100,100,87.5,100,100,100],"tmeD":[5.85,2.3833,4.8833,3.5333,0.3,3.25,3.8667,2.35,0,0.7],"tmaD":[6.59028,2.59083,0.78944,1.45083,1.05861,0.97278,0.765,1.53944,0.97361,0.51194]}},{"first":"Luana","nome":"Luana Silva","s":{"convM":[144,180,58,5],"nCsatM":[40,51,13,1],"csatM":[95,96.1,100,100],"tmeM":[13.2333,4.15,1.1,0],"tmaM":[4.60639,1.98944,1.82167,0.40167],"convS":[18,3,5],"nCsatS":[8,1,1],"csatS":[87.5,100,100],"tmeS":[11.3167,null,0],"tmaS":[1.20667,null,0.40167],"convD":[1,2,null,null,null,null,null,3,2,null],"nCsatD":[1,null,null,null,null,null,null,1,null,null],"csatD":[100,null,null,null,null,null,null,100,null,null],"tmeD":[null,null,null,null,null,null,null,0,null,null],"tmaD":[null,null,null,null,null,null,null,0.40167,null,null]}},{"first":"Thyfany","nome":"Thyfany Correia","s":{"convM":[283,382,383,97],"nCsatM":[78,129,155,51],"csatM":[98.7,95.3,95.5,94.1],"tmeM":[1.2333,1.4167,1.2833,1.4167],"tmaM":[3.18667,1.38833,1.4625,1.93639],"convS":[84,68,70],"nCsatS":[45,40,34],"csatS":[93.3,97.5,91.2],"tmeS":[1.0667,1.4667,1.4167],"tmaS":[1.755,1.68917,1.97028],"convD":[20,9,12,18,9,15,13,18,10,15],"nCsatD":[12,7,4,9,8,7,7,5,5,10],"csatD":[91.7,100,100,100,100,100,71.4,80,100,100],"tmeD":[0.8333,4.0833,1.55,3.0833,1.3,1.5667,0.9833,1.1333,2.2,1.1],"tmaD":[1.18639,1.70611,2.08556,3.16222,0.60556,0.97472,4.01889,1.78639,2.97861,2.13611]}},{"first":"Luana Alves","nome":"Luana Alves","s":{"convM":[null,null,7,26],"nCsatM":[null,null,1,16],"csatM":[null,null,100,93.8],"tmeM":[null,null,0.6667,0.75],"tmaM":[null,null,2.79222,4.275],"convS":[null,13,20],"nCsatS":[null,6,13],"csatS":[null,100,92.3],"tmeS":[null,0.7167,0.7167],"tmaS":[null,2.79222,4.275],"convD":[null,5,2,3,3,2,5,6,2,5],"nCsatD":[null,2,1,2,1,1,4,2,1,5],"csatD":[null,100,100,100,100,0,100,100,100,100],"tmeD":[null,2.5667,0.6333,0.9,0.5833,0.9833,0.7,0.35,1.0833,0.6167],"tmaD":[null,2.79222,3.91111,4.02139,2.46056,7.49194,6.82806,4.75583,3.97472,2.59972]}}]},"prest":{"first":"Maynara","slaM":[null,91.8,93.3,79.7],"slaS":[91.2,93.8,76.2],"volM":[7,539,618,177],"volD":{"labels":["21/09","22/09","23/09","24/09","25/09","28/09","29/09","30/09","01/10","02/10","05/10","06/10","07/10","08/10","09/10"],"values":[27,34,31,43,22,32,35,36,21,24,26,36,26,28,16]},"note":"<strong>Como ler:</strong> % dentro do prazo = linhas \"DENTRO DO SLA\" ÷ total, pela data agendada. Volume = tickets distintos pela data em que entraram na sua etapa. Seu SLA começa em Ago/26, quando a etapa passou a ter volume no seu nome — Jul/26 aparece sem dados de SLA, não como 0%."}};/*__DATA_END__*/</script>
 <script src="https://annitorrecilhas-ship-it.github.io/dash-smb/base.js?v=85bf9cfb10"></script>
-<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/paineis.js?v=953b3a9e0a"></script>
+<script src="https://annitorrecilhas-ship-it.github.io/dash-smb/paineis.js?v=f2d2eff8db"></script>
 </body></html>
